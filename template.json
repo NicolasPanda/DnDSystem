@@ -1,0 +1,203 @@
+{
+  "Character": {
+    "name": "",
+    "race": "",
+    "class": "",
+    "level": 1,
+    "xp": 0,
+    "hp": { "value": 5, "max": 5 },
+    "shield": { "value": 0, "max": 0 },
+    "focus": { "value": 5, "max": 5 },
+    "spellPoints": 0,
+    "gold": 0,
+    "traits": {
+      "age": 1,
+      "Weight": 1,
+      "size": 34
+    },
+    "lore": "",
+    "languages": [],
+    "professions": [],
+    "spells": [],
+    "recipes": [],
+    "inventory": [{ "item": "", "number": 1 }],
+    "buffs": [],
+    "equipment": {
+      "helmet": null,
+      "shoulders": null,
+      "torso": null,
+      "cloak": null,
+      "glove": null,
+      "belt": null,
+      "necklace": null,
+      "weapon": null,
+      "pants": null,
+      "shield": null,
+      "ringLeft": null,
+      "ringRight": null,
+      "boots": null
+    }
+  },
+  "class": {
+    "name": "",
+    "image": "",
+    "description": "",
+    "applyEffect": [],
+    "peculiarity": []
+  },
+  "race": {
+    "name": "",
+    "image": "",
+    "description": "",
+    "applyEffect": [],
+    "languages": [],
+    "peculiarity": []
+  },
+  "crystal": {
+    "name": "",
+    "image": "",
+    "description": "",
+    "applyEffect": [],
+    "peculiarity": []
+  },
+  "languages": {
+    "name": "",
+    "description": ""
+  },
+  "spell": {
+    "name": "",
+    "icon": "",
+    "description": "",
+    "stat": "intelligence",
+    "diceNumber": 3,
+    "perfectTargetEffect": [],
+    "targetEffect": [
+      {
+        "duration": 0,
+        "isGood": false,
+        "effect": "applyDamagePhy",
+        "magnitude": 0.5,
+        "magnitudeType": "damagePhy"
+      },
+      {
+        "duration": 3,
+        "isGood": true,
+        "effect": "shield",
+        "magnitude": 8,
+        "magnitudeType": "damageMag"
+      }
+    ]
+  },
+  "item": {
+    "name": "",
+    "maxStack": 100,
+    "icon": "",
+    "price": 1,
+    "description": "",
+    "rarity": "common"
+  },
+  "weapon": {
+    "name": "",
+    "maxStack": 1,
+    "icon": "",
+    "price": 1,
+    "description": "",
+    "rarity": "common",
+    "type": "oneHands",
+    "stat": "intelligence",
+    "diceNumber": 3,
+    "breakNoPerfect": false,
+    "applyEffect": [],
+    "targetEffect": [],
+    "perfectTargetEffect": []
+  },
+  "equipment": {
+    "name": "",
+    "maxStack": 1,
+    "icon": "",
+    "price": 1,
+    "description": "",
+    "rarity": "common",
+    "type": "torso",
+    "applyEffect": [],
+    "equipmentSets": [],
+    "equipmentSetsApplyEffect": []
+  },
+  "consumable": {
+    "name": "",
+    "maxStack": 100,
+    "icon": "",
+    "price": 1,
+    "description": "",
+    "rarity": "common",
+    "targetEffect": []
+  },
+  "recipe": {
+    "name": "",
+    "maxStack": 1,
+    "icon": "",
+    "price": 1,
+    "description": "",
+    "rarity": "common",
+    "recipeGivenItem": [],
+    "requireItems": [],
+    "requireProfession": "blacksmithing",
+    "requireProfessionLevel": 1
+  },
+  "enums": {
+    "itemTypes": ["item", "weapon", "equipment", "consumable", "recipe"],
+    "rarity": ["common", "rare", "epic", "legendary", "mythic"],
+    "stats": [
+      "strength",
+      "vitality",
+      "intelligence",
+      "awareness",
+      "talent",
+      "speed",
+      "luck",
+      "evasion",
+      "movement",
+      "damageMag",
+      "damagePhy",
+      "armorMag",
+      "armorPhy"
+    ],
+    "effectTypes": [
+      "strength",
+      "vitality",
+      "intelligence",
+      "awareness",
+      "talent",
+      "speed",
+      "luck",
+      "evasion",
+      "movement",
+      "damageMag",
+      "damagePhy",
+      "armorMag",
+      "armorPhy",
+      "---------------",
+      "applyDamagePhy",
+      "applyDamageMag",
+      "shield",
+      "stun",
+      "petrified",
+      "scared",
+      "shocked",
+      "invincible"
+    ],
+    "professionTypes": [
+      "blacksmithing",
+      "tailoring",
+      "jewelCrafting",
+      "enchanting",
+      "alchemy",
+      "cook"
+    ],
+    "weaponTypes": {
+      "twoHands": "twoHand",
+      "oneHands": "oneHands",
+      "shield": "shield"
+    }
+  }
+}

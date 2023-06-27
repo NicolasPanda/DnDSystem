@@ -1,0 +1,28 @@
+export const alignments = ["good", "neutral", "bad"];
+
+export const effectTypes = [
+  "strength",
+  "vitality",
+  "intelligence",
+  "awareness",
+  "talent",
+  "speed",
+  "luck",
+  "evasion",
+  "movement",
+  "damageMag",
+  "damagePhy",
+  "armorMag",
+  "armorPhy",
+  "applyDamagePhy",
+  "applyDamageMag",
+  "shield",
+  "stun",
+  "petrified",
+  "scared",
+  "shocked",
+  "invincible",
+  "invisible",
+  "sleep",
+  "resurrect",
+];

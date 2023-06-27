@@ -13,6 +13,11 @@ node_modules
 # production
 /build
 
+#icon
+/backend/uploads/images/icons/
+#images
+/backend/uploads/images/
+
 # misc
 .DS_Store
 .env.local

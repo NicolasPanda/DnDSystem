@@ -6,12 +6,12 @@ const app = express();
 const mongoose = require("mongoose");
 const http = require("http").createServer(app);
 const io = require("socket.io")(http, {
-  cors: { origin: process.env.CLIENT_URI, methods: ["GET", "POST"] },
+  cors: { origin: "*", methods: ["GET", "POST"] },
 });
 
 //socket
-// const connectionSocket = require("./sockets/connection.socket");
-// connectionSocket.SocketIO(io);
+const connectionSocket = require("./sockets/connection.socket");
+connectionSocket.SocketIO(io);
 
 //routes
 // const route_auth = require("./routes/route_auth");

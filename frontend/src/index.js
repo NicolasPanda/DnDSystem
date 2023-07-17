@@ -16,18 +16,21 @@ import { SocketProvider } from "./contexts/socket";
 
 //action
 import { ActionProvider } from "./actions/action";
+import ActionCharacterService from "./actions/characters.action";
+import ActionFoldersService from "./actions/folder.action";
 
 const socket = io(process.env.REACT_APP_SERVER_URI);
 
 const services = {
-  // currentProject: new ActionCurrentProjectService(socket, store),
+  folders: new ActionFoldersService(socket, store),
+  characters: new ActionCharacterService(socket, store),
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <SocketProvider socket={socket}>
-      <ActionProvider services={{ services }}>
+      <ActionProvider services={services}>
         <SyncStateProvider store={store}>
           <App />
         </SyncStateProvider>

@@ -602,10 +602,6 @@ video {
   height: 2.5rem;
 }
 
-.h-11 {
-  height: 2.75rem;
-}
-
 .h-14 {
   height: 3.5rem;
 }
@@ -650,12 +646,12 @@ video {
   min-height: 100vh;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-16 {
+  width: 4rem;
 }
 
-.w-24 {
-  width: 6rem;
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .w-3\/4 {
@@ -680,10 +676,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .min-w-\[600px\] {
@@ -1024,16 +1016,6 @@ video {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-@media (min-width: 1024px) {
-  .lg\:w-24 {
-    width: 6rem;
-  }
-
-  .lg\:w-16 {
-    width: 4rem;
-  }
 }
 
 @media (min-width: 1280px) {

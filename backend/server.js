@@ -13,6 +13,12 @@ const io = require("socket.io")(http, {
 const connectionSocket = require("./sockets/connection.socket");
 connectionSocket.SocketIO(io);
 
+const folderSocket = require("./sockets/folders.socket");
+folderSocket.SocketIO(io);
+
+const characterSocket = require("./sockets/characters.socket");
+characterSocket.SocketIO(io);
+
 //routes
 // const route_auth = require("./routes/route_auth");
 

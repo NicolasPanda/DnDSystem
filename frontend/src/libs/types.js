@@ -8,6 +8,7 @@ export const effectTypes = [
   "talent",
   "speed",
   "luck",
+  "focus",
   "evasion",
   "movement",
   "damageMag",

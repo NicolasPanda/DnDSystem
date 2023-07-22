@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Chat from "../../components/chat/Chat";
-import ModalContainer from "../../components/ModalContainer";
 import ToolBar from "./ToolBar";
 
 function GM() {
-  const [ModalCrystalOpen, setModalCrystalOpen] = useState(false);
-
   return (
     <>
       <div className="flex h-screen">
@@ -19,10 +16,6 @@ function GM() {
         </div>
         <Chat className={"w-[450px]"} />
       </div>
-      <ModalContainer
-        open={ModalCrystalOpen}
-        onClose={() => setModalCrystalOpen(false)}
-      />
     </>
   );
 }

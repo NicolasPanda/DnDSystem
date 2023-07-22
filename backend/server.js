@@ -19,6 +19,9 @@ folderSocket.SocketIO(io);
 const characterSocket = require("./sockets/characters.socket");
 characterSocket.SocketIO(io);
 
+const effectSocket = require("./sockets/effects.socket");
+effectSocket.SocketIO(io);
+
 //routes
 // const route_auth = require("./routes/route_auth");
 
@@ -30,13 +33,12 @@ const corsOptions = {
 // middleware
 app.use(cors(corsOptions));
 app.use(express.json());
-// app.use((req, res, next) => {
-//   console.log(req.path, req.method);
-//   next();
-// });
+
+const files_routes = require("./routes/files.routes");
 
 //routes
-// app.use("/api/auth", route_auth);
+app.use("/files", express.static("uploads/images"));
+app.use("/files", files_routes);
 
 //connect to db
 mongoose.set("strictQuery", true);

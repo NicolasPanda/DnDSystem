@@ -1,13 +1,18 @@
-const { getInitFolders } = require("../controllers/folders.controllers");
+const {
+  getInitFolders,
+  addFolder,
+  editFolder,
+  deleteFolder,
+} = require("../controllers/folders.controllers");
 
 const RESPONSE_INITIAL_STATE_FOLDERS = "response_initial_state_folders";
-const RESPONSE_CHANGE_FOLDERS = "response_change_folders";
-const RESPONSE_ADD_FOLDERS = "response_add_folders";
-const RESPONSE_DELETE_FOLDERS = "response_delete_folders";
+const RESPONSE_CHANGE_FOLDER = "response_change_folder";
+const RESPONSE_ADD_FOLDER = "response_add_folder";
+const RESPONSE_DELETE_FOLDER = "response_delete_folder";
 const SEND_REQUEST_INITIAL_STATE_FOLDERS = "send_request_initial_state_folders";
-const SEND_ADD_FOLDERS = "send_add_folders";
-const SEND_EDIT_FOLDERS = "send_edit_folders";
-const SEND_DELETE_FOLDERS = "send_delete_folders";
+const SEND_ADD_FOLDER = "send_add_folder";
+const SEND_EDIT_FOLDER = "send_edit_folder";
+const SEND_DELETE_FOLDER = "send_delete_folder";
 
 exports.SocketIO = (io) => {
   io.on("connection", (socket) => {
@@ -22,30 +27,30 @@ exports.SocketIO = (io) => {
     });
 
     //on add folder request
-    socket.on(SEND_ADD_FOLDERS, async (change, acknowledge) => {
+    socket.on(SEND_ADD_FOLDER, async ({ change }, acknowledge) => {
       try {
         const folder = await addFolder(change);
-        socket.emit(RESPONSE_ADD_FOLDERS, { state: folder });
+        socket.emit(RESPONSE_ADD_FOLDER, { state: folder });
       } catch (error) {
         acknowledge(error);
       }
     });
 
     //on edit folder request
-    socket.on(SEND_EDIT_FOLDERS, async (change, acknowledge) => {
+    socket.on(SEND_EDIT_FOLDER, async ({ change }, acknowledge) => {
       try {
         const folder = await editFolder(change);
-        socket.emit(RESPONSE_CHANGE_FOLDERS, { state: folder });
+        socket.emit(RESPONSE_CHANGE_FOLDER, { state: folder });
       } catch (error) {
         acknowledge(error);
       }
     });
 
     //on delete folder request
-    socket.on(SEND_DELETE_FOLDERS, async (change, acknowledge) => {
+    socket.on(SEND_DELETE_FOLDER, async ({ change }, acknowledge) => {
       try {
         const folder = await deleteFolder(change);
-        socket.emit(RESPONSE_DELETE_FOLDERS, { state: folder });
+        socket.emit(RESPONSE_DELETE_FOLDER, { state: folder });
       } catch (error) {
         acknowledge(error);
       }

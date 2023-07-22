@@ -17,11 +17,12 @@ function Button({
 }) {
   return (
     <button
+      disabled={disable}
       className={`px-8 py-2 font-bold text-white rounded-md focus:outline-none focus:shadow-outline ${
         disable ? "bg-stone-600" : colors[color]
       }  ${className}`}
       type="button"
-      onClick={disable ? null : onClick}
+      onClick={onClick}
       {...rest}
     >
       {name}

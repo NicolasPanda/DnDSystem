@@ -1,11 +1,11 @@
 const RESPONSE_INITIAL_STATE_FOLDERS = "response_initial_state_folders";
-const RESPONSE_CHANGE_FOLDERS = "response_change_folders";
-const RESPONSE_ADD_FOLDERS = "response_add_folders";
-const RESPONSE_DELETE_FOLDERS = "response_delete_folders";
+const RESPONSE_CHANGE_FOLDER = "response_change_folder";
+const RESPONSE_ADD_FOLDER = "response_add_folder";
+const RESPONSE_DELETE_FOLDER = "response_delete_folder";
 const SEND_REQUEST_INITIAL_STATE_FOLDERS = "send_request_initial_state_folders";
-const SEND_ADD_FOLDERS = "send_add_folders";
-const SEND_EDIT_FOLDERS = "send_edit_folders";
-const SEND_DELETE_FOLDERS = "send_delete_folders";
+const SEND_ADD_FOLDER = "send_add_folder";
+const SEND_EDIT_FOLDER = "send_edit_folder";
+const SEND_DELETE_FOLDER = "send_delete_folder";
 
 class ActionFolderService {
   constructor(socket, store) {
@@ -20,7 +20,7 @@ class ActionFolderService {
       console.log("Initializing folders with state:", state);
     });
 
-    this.socket.on(RESPONSE_ADD_FOLDERS, ({ state }) => {
+    this.socket.on(RESPONSE_ADD_FOLDER, ({ state }) => {
       const [, setFolders] = this.store.useDoc("/folders");
       setFolders((folders) => {
         folders.push(state);
@@ -28,7 +28,7 @@ class ActionFolderService {
       console.log("Folder add", state);
     });
 
-    this.socket.on(RESPONSE_CHANGE_FOLDERS, ({ state }) => {
+    this.socket.on(RESPONSE_CHANGE_FOLDER, ({ state }) => {
       const [folders, setFolders] = this.store.useDoc("/folders");
       const index = folders.findIndex((item) => item._id === state._id);
       setFolders((folder) => {
@@ -37,7 +37,7 @@ class ActionFolderService {
       console.log("Folder change", state);
     });
 
-    this.socket.on(RESPONSE_DELETE_FOLDERS, ({ state }) => {
+    this.socket.on(RESPONSE_DELETE_FOLDER, ({ state }) => {
       const [folders, setFolders] = this.store.useDoc("/folders");
       const index = folders.findIndex((item) => item._id === state._id);
       setFolders((folder) => {
@@ -48,9 +48,9 @@ class ActionFolderService {
 
   closeSocket() {
     this.socket.off(RESPONSE_INITIAL_STATE_FOLDERS);
-    this.socket.off(RESPONSE_ADD_FOLDERS);
-    this.socket.off(RESPONSE_CHANGE_FOLDERS);
-    this.socket.off(RESPONSE_DELETE_FOLDERS);
+    this.socket.off(RESPONSE_ADD_FOLDER);
+    this.socket.off(RESPONSE_CHANGE_FOLDER);
+    this.socket.off(RESPONSE_DELETE_FOLDER);
   }
 
   requestInitialState(ErrorCallback) {
@@ -62,7 +62,7 @@ class ActionFolderService {
   }
 
   addFolder(change, ErrorCallback) {
-    this.socket.emit(SEND_ADD_FOLDERS, { change }, ({ error }) => {
+    this.socket.emit(SEND_ADD_FOLDER, { change }, ({ error }) => {
       if (error) {
         ErrorCallback(error);
       }
@@ -70,7 +70,7 @@ class ActionFolderService {
   }
 
   editFolder(change, id, ErrorCallback) {
-    this.socket.emit(SEND_EDIT_FOLDERS, { change, id }, ({ error }) => {
+    this.socket.emit(SEND_EDIT_FOLDER, { change, id }, ({ error }) => {
       if (error) {
         ErrorCallback(error);
       }
@@ -78,7 +78,7 @@ class ActionFolderService {
   }
 
   deleteFolder(id, ErrorCallback) {
-    this.socket.emit(SEND_DELETE_FOLDERS, { id }, ({ error }) => {
+    this.socket.emit(SEND_DELETE_FOLDER, { id }, ({ error }) => {
       if (error) {
         ErrorCallback(error);
       }

@@ -154,7 +154,7 @@ function ToolBar() {
         open={modalEffectOpen}
         onClose={handleCloseEffectModal}
         title="Effect"
-        className="w-2/3"
+        className="w-5/6 h-5/6"
       >
         <CreateEffectForm />
       </ModalContainer>

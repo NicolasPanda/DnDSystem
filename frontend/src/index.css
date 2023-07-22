@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 
+.scroll {
+    @apply scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-zinc-500 scrollbar-thumb-rounded scrollbar-track-rounded-full;
+}
+
 .frame {
     @apply overflow-hidden border-2 border-orange-200 rounded-lg shadow-lg bg-stone-700;
+}
+
+.frame-selected {
+    @apply overflow-hidden border-4 rounded-lg shadow-lg border-stone-100 bg-stone-700;
 }

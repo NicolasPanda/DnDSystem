@@ -15,10 +15,9 @@ const effectSchema = new Schema(
     },
     icon: {
       type: String,
+      required: true,
     },
-    description: {
-      type: String,
-    },
+    description: {},
     alignment: {
       type: String,
       required: true,

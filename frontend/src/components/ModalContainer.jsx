@@ -26,7 +26,7 @@ function ModalContainer({
         <h1 className="w-full text-2xl font-bold text-center uppercase">
           {title}
         </h1>
-        <div className="flex w-full h-full pb-8 shrink-0">{children}</div>
+        <div className="flex flex-col w-full h-full shrink-0">{children}</div>
       </div>
     </div>,
     document.getElementById("modal-root")

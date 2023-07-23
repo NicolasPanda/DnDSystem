@@ -37,9 +37,9 @@ exports.SocketIO = (io) => {
     });
 
     //on edit folder request
-    socket.on(SEND_EDIT_FOLDER, async ({ change }, acknowledge) => {
+    socket.on(SEND_EDIT_FOLDER, async ({ change, id }, acknowledge) => {
       try {
-        const folder = await editFolder(change);
+        const folder = await editFolder(change, id);
         socket.emit(RESPONSE_CHANGE_FOLDER, { state: folder });
       } catch (error) {
         acknowledge(error);
@@ -47,9 +47,9 @@ exports.SocketIO = (io) => {
     });
 
     //on delete folder request
-    socket.on(SEND_DELETE_FOLDER, async ({ change }, acknowledge) => {
+    socket.on(SEND_DELETE_FOLDER, async ({ id }, acknowledge) => {
       try {
-        const folder = await deleteFolder(change);
+        const folder = await deleteFolder(id);
         socket.emit(RESPONSE_DELETE_FOLDER, { state: folder });
       } catch (error) {
         acknowledge(error);

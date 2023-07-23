@@ -30,6 +30,7 @@ class ActionFolderService {
 
     this.socket.on(RESPONSE_CHANGE_FOLDER, ({ state }) => {
       const [folders, setFolders] = this.store.useDoc("/folders");
+      console.log(state);
       const index = folders.findIndex((item) => item._id === state._id);
       setFolders((folder) => {
         folder[index] = state;

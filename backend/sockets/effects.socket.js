@@ -37,9 +37,9 @@ exports.SocketIO = (io) => {
     });
 
     //on edit effect request
-    socket.on(SEND_EDIT_EFFECT, async ({ change }, acknowledge) => {
+    socket.on(SEND_EDIT_EFFECT, async ({ change, id }, acknowledge) => {
       try {
-        const effect = await editEffect(change);
+        const effect = await editEffect(change, id);
         socket.emit(RESPONSE_CHANGE_EFFECT, { state: effect });
       } catch (error) {
         acknowledge(error);
@@ -47,9 +47,9 @@ exports.SocketIO = (io) => {
     });
 
     //on delete effect request
-    socket.on(SEND_DELETE_EFFECT, async ({ change }, acknowledge) => {
+    socket.on(SEND_DELETE_EFFECT, async ({ id }, acknowledge) => {
       try {
-        const effect = await deleteEffect(change);
+        const effect = await deleteEffect(id);
         socket.emit(RESPONSE_DELETE_EFFECT, { state: effect });
       } catch (error) {
         acknowledge(error);

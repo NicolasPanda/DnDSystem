@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
 
 .scroll {
     @apply scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-zinc-500 scrollbar-thumb-rounded scrollbar-track-rounded-full;

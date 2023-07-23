@@ -38,9 +38,9 @@ exports.SocketIO = (io) => {
     });
 
     //on edit character request
-    socket.on(SEND_EDIT_CHARACTER, async ({ change }, acknowledge) => {
+    socket.on(SEND_EDIT_CHARACTER, async ({ change, id }, acknowledge) => {
       try {
-        const character = await editCharacter(change);
+        const character = await editCharacter(change, id);
         socket.emit(RESPONSE_CHANGE_CHARACTER, { state: character });
       } catch (error) {
         acknowledge(error);
@@ -48,9 +48,9 @@ exports.SocketIO = (io) => {
     });
 
     //on delete character request
-    socket.on(SEND_DELETE_CHARACTER, async ({ change }, acknowledge) => {
+    socket.on(SEND_DELETE_CHARACTER, async ({ id }, acknowledge) => {
       try {
-        const character = await deleteCharacter(change);
+        const character = await deleteCharacter(id);
         socket.emit(RESPONSE_DELETE_CHARACTER, { state: character });
       } catch (error) {
         acknowledge(error);

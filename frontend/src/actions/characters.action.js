@@ -26,7 +26,6 @@ class ActionCharacterService {
       setCharacters((characters) => {
         characters.push(state);
       });
-      console.log("Character add", state);
     });
 
     this.socket.on(RESPONSE_CHANGE_CHARACTER, ({ state }) => {
@@ -35,7 +34,6 @@ class ActionCharacterService {
       setCharacters((character) => {
         character[index] = state;
       });
-      console.log("Character change", state);
     });
 
     this.socket.on(RESPONSE_DELETE_CHARACTER, ({ state }) => {

@@ -13,9 +13,9 @@ const folderSchema = new Schema(
       required: true,
       enum: ["effects", "enemies", "items", "spells"],
     },
-    order: {
-      type: Number,
-      required: true,
+    parent: {
+      type: Schema.Types.ObjectId,
+      ref: "folders",
     },
   },
   { timestamps: true }

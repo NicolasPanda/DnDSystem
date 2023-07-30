@@ -22,7 +22,7 @@ exports.SocketIO = (io) => {
         const effects = await getInitEffects();
         socket.emit(RESPONSE_INITIAL_STATE_EFFECTS, { state: effects });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -30,9 +30,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_ADD_EFFECT, async ({ change }, acknowledge) => {
       try {
         const effect = await addEffect(change);
-        socket.emit(RESPONSE_ADD_EFFECT, { state: effect });
+        io.emit(RESPONSE_ADD_EFFECT, { state: effect });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -40,9 +40,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_EDIT_EFFECT, async ({ change, id }, acknowledge) => {
       try {
         const effect = await editEffect(change, id);
-        socket.emit(RESPONSE_CHANGE_EFFECT, { state: effect });
+        io.emit(RESPONSE_CHANGE_EFFECT, { state: effect });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -50,9 +50,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_DELETE_EFFECT, async ({ id }, acknowledge) => {
       try {
         const effect = await deleteEffect(id);
-        socket.emit(RESPONSE_DELETE_EFFECT, { state: effect });
+        io.emit(RESPONSE_DELETE_EFFECT, { state: effect });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
   });

@@ -13,7 +13,7 @@ function TextArea({ value, onChange, placeholder = "Description" }) {
     editorProps: {
       attributes: {
         class:
-          "w-full h-full p-2 resize-none scroll overflow-x-hidden overflow-y-scroll focus:outline-none",
+          "flex flex-col w-full h-28 p-2 resize-none scroll overflow-x-hidden overflow-y-scroll focus:outline-none",
       },
     },
   });

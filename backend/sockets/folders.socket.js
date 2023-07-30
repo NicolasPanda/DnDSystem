@@ -22,7 +22,7 @@ exports.SocketIO = (io) => {
         const folders = await getInitFolders();
         socket.emit(RESPONSE_INITIAL_STATE_FOLDERS, { state: folders });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -30,9 +30,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_ADD_FOLDER, async ({ change }, acknowledge) => {
       try {
         const folder = await addFolder(change);
-        socket.emit(RESPONSE_ADD_FOLDER, { state: folder });
+        io.emit(RESPONSE_ADD_FOLDER, { state: folder });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -40,9 +40,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_EDIT_FOLDER, async ({ change, id }, acknowledge) => {
       try {
         const folder = await editFolder(change, id);
-        socket.emit(RESPONSE_CHANGE_FOLDER, { state: folder });
+        io.emit(RESPONSE_CHANGE_FOLDER, { state: folder });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -50,9 +50,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_DELETE_FOLDER, async ({ id }, acknowledge) => {
       try {
         const folder = await deleteFolder(id);
-        socket.emit(RESPONSE_DELETE_FOLDER, { state: folder });
+        io.emit(RESPONSE_DELETE_FOLDER, { state: folder });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
   });

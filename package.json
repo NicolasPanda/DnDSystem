@@ -11,10 +11,6 @@
   "author": "Nicolas Gagne",
   "license": "ISC",
   "dependencies": {
-    "@mui/base": "^5.0.0-beta.8",
-    "@tiptap/pm": "^2.0.4",
-    "@tiptap/react": "^2.0.4",
-    "@tiptap/starter-kit": "^2.0.4",
     "concurrently": "^7.6.0"
   }
 }

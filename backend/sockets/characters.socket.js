@@ -23,7 +23,7 @@ exports.SocketIO = (io) => {
         const characters = await getInitCharacters();
         socket.emit(RESPONSE_INITIAL_STATE_CHARACTERS, { state: characters });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -31,9 +31,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_ADD_CHARACTER, async ({ change }, acknowledge) => {
       try {
         const character = await addCharacter(change);
-        socket.emit(RESPONSE_ADD_CHARACTER, { state: character });
+        io.emit(RESPONSE_ADD_CHARACTER, { state: character });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -41,9 +41,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_EDIT_CHARACTER, async ({ change, id }, acknowledge) => {
       try {
         const character = await editCharacter(change, id);
-        socket.emit(RESPONSE_CHANGE_CHARACTER, { state: character });
+        io.emit(RESPONSE_CHANGE_CHARACTER, { state: character });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
 
@@ -51,9 +51,9 @@ exports.SocketIO = (io) => {
     socket.on(SEND_DELETE_CHARACTER, async ({ id }, acknowledge) => {
       try {
         const character = await deleteCharacter(id);
-        socket.emit(RESPONSE_DELETE_CHARACTER, { state: character });
+        io.emit(RESPONSE_DELETE_CHARACTER, { state: character });
       } catch (error) {
-        acknowledge(error);
+        acknowledge({ error: error.message });
       }
     });
   });

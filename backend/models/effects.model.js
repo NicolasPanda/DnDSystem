@@ -49,6 +49,7 @@ const effectSchema = new Schema(
             "armorPhy",
             "applyDamagePhy",
             "applyDamageMag",
+            "heal",
             "shield",
             "stun",
             "petrified",

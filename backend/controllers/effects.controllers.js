@@ -33,6 +33,8 @@ const editEffect = async (change, id) => {
 const deleteEffect = async (id) => {
   try {
     const effect = await Effect.findByIdAndDelete(id);
+
+    //TODO: delete all effects from all things that have this effect
     return effect;
   } catch (error) {
     throw error;

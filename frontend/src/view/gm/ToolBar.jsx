@@ -9,11 +9,11 @@ import { ReactComponent as Stars } from "../../assets/stars-solid.svg";
 import { ReactComponent as WandSparkles } from "../../assets/wand-sparkles-solid.svg";
 import { ReactComponent as Minotaur } from "../../assets/minotaur.svg";
 import { ReactComponent as Sack } from "../../assets/sack-solid.svg";
-import { ReactComponent as Gem } from "../../assets/gem-solid.svg";
 import { ReactComponent as HandMagic } from "../../assets/hand-holding-magic-solid.svg";
 import { ReactComponent as Dice } from "../../assets/dice-d20-solid.svg";
 import ModalContainer from "../../components/ModalContainer";
-import CreateEffectForm from "./createForm/CreateEffectForm";
+import CreateForm from "../../components/CreateForm";
+import FormEffect from "./createForm/FormEffect";
 
 function ToolBar() {
   const [modalCrystalOpen, setModalCrystalOpen] = useState(false);
@@ -156,7 +156,7 @@ function ToolBar() {
         title="Effect"
         className="w-5/6 h-5/6"
       >
-        <CreateEffectForm />
+        <FormEffect />
       </ModalContainer>
 
       <RenderButton

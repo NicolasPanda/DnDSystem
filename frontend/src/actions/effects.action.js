@@ -25,7 +25,6 @@ class ActionEffectService {
       setEffects((effects) => {
         effects.push(state);
       });
-      console.log("Effect add", state);
     });
 
     this.socket.on(RESPONSE_CHANGE_EFFECT, ({ state }) => {
@@ -34,7 +33,6 @@ class ActionEffectService {
       setEffects((effect) => {
         effect[index] = state;
       });
-      console.log("Effect change", state);
     });
 
     this.socket.on(RESPONSE_DELETE_EFFECT, ({ state }) => {

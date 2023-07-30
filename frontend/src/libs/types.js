@@ -1,5 +1,7 @@
 export const alignments = ["good", "neutral", "bad"];
 
+export const operations = ["add", "subtract", "multiply", "divide"];
+
 export const effectTypes = [
   "strength",
   "vitality",
@@ -17,6 +19,7 @@ export const effectTypes = [
   "armorPhy",
   "applyDamagePhy",
   "applyDamageMag",
+  "heal",
   "shield",
   "stun",
   "petrified",

@@ -16,7 +16,7 @@ function FormEffect() {
   const action = useAction();
 
   const handleAdd = (folder) => {
-    action.effects.addEffect(
+    action.effects.add(
       {
         name: "New Effect",
         folder: folder._id,
@@ -33,19 +33,19 @@ function FormEffect() {
   };
 
   const handleEdit = (id, data) => {
-    action.effects.editEffect(data, id, (error) => {
+    action.effects.edit(data, id, (error) => {
       console.log(error);
     });
   };
 
   const handleDelete = (effect) => {
-    action.effects.deleteEffect(effect._id, (error) => {
+    action.effects.delete(effect._id, (error) => {
       console.log(error);
     });
   };
 
   const handleChangeFolder = (id, folder) => {
-    action.effects.editEffect(
+    action.effects.edit(
       {
         folder: folder,
       },

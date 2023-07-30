@@ -6,22 +6,37 @@ function Main() {
   const action = useAction();
 
   useEffect(() => {
+    const basicAction = [
+      "folders",
+      "effects",
+      "races",
+      "class",
+      "crystals",
+      "spells",
+      "enemies",
+      "items",
+    ];
     //initial state listener
-    action.folders.setupInitialStateListener();
     action.characters.setupInitialStateListener();
-    action.effects.setupInitialStateListener();
+
+    //basic action listener
+    basicAction.forEach((actionName) => {
+      action[actionName].setupInitialStateListener();
+
+      action[actionName].requestInitialState();
+    });
 
     //request initial state
-    action.folders.requestInitialState();
     action.characters.requestInitialState();
-    action.effects.requestInitialState();
 
     return () => {
-      action.folders.closeSocket();
       action.characters.closeSocket();
-      action.effects.closeSocket();
+
+      basicAction.forEach((actionName) => {
+        action[actionName].closeSocket();
+      });
     };
-  }, [action.folders, action.characters, action.effects]);
+  }, [action]);
 
   return (
     <>

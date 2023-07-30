@@ -127,7 +127,7 @@ function CreateForm({
   };
 
   const handleCreateFolder = () => {
-    action.folders.addFolder(
+    action.folders.add(
       {
         name: folderName,
         type: folderType,
@@ -154,7 +154,7 @@ function CreateForm({
   };
 
   const handleCreateChildFolder = () => {
-    action.folders.addFolder(
+    action.folders.add(
       {
         name: folderName,
         type: folderType,
@@ -175,7 +175,7 @@ function CreateForm({
 
   const handleRenameFolder = () => {
     console.log(currentRenameFolder);
-    action.folders.editFolder(
+    action.folders.edit(
       {
         name: folderName,
       },
@@ -200,7 +200,7 @@ function CreateForm({
       return;
     }
 
-    action.folders.deleteFolder(folder._id, (error) => {
+    action.folders.delete(folder._id, (error) => {
       console.log(error);
     });
   };

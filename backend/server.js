@@ -13,14 +13,44 @@ const io = require("socket.io")(http, {
 const connectionSocket = require("./sockets/connection.socket");
 connectionSocket.SocketIO(io);
 
-const folderSocket = require("./sockets/folders.socket");
-folderSocket.SocketIO(io);
-
 const characterSocket = require("./sockets/characters.socket");
 characterSocket.SocketIO(io);
 
-const effectSocket = require("./sockets/effects.socket");
-effectSocket.SocketIO(io);
+//basic socket
+const BasicController = require("./controllers/basic.controller");
+const { BasicSocketIO } = require("./sockets/basic.socket");
+
+const Folder = require("./models/folders.model");
+const folderController = new BasicController(Folder);
+BasicSocketIO(io, folderController, "folders");
+
+const Effect = require("./models/effects.model");
+const effectController = new BasicController(Effect);
+BasicSocketIO(io, effectController, "effects");
+
+const Race = require("./models/races.model");
+const raceController = new BasicController(Race);
+BasicSocketIO(io, raceController, "races");
+
+const Class = require("./models/class.model");
+const classController = new BasicController(Class);
+BasicSocketIO(io, classController, "class");
+
+const Crystal = require("./models/crystals.model");
+const crystalController = new BasicController(Crystal);
+BasicSocketIO(io, crystalController, "crystals");
+
+const Spell = require("./models/spells.model");
+const spellController = new BasicController(Spell);
+BasicSocketIO(io, spellController, "spells");
+
+const Enemy = require("./models/enemies.model");
+const enemyController = new BasicController(Enemy);
+BasicSocketIO(io, enemyController, "enemies");
+
+const Item = require("./models/items.model");
+const itemController = new BasicController(Item);
+BasicSocketIO(io, itemController, "items");
 
 //routes
 // const route_auth = require("./routes/route_auth");

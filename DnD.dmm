@@ -1443,6 +1443,19 @@
 					"options": ""
 				},
 				{
+					"id": "d6612336-4701-4fc6-b881-11aed327d592",
+					"name": "folder",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "folders"
+				},
+				{
 					"id": "bfdc2020-e40f-44df-b3f2-9ee184f30551",
 					"name": "icon",
 					"datatype": "String",
@@ -1515,7 +1528,7 @@
 				{
 					"id": "2860a0c0-c2c6-48a0-8d86-53256ffc25df",
 					"name": "languages",
-					"datatype": "5d65ecf8-0913-43e6-9348-1fe6cdf594f4",
+					"datatype": "String",
 					"param": "",
 					"pk": false,
 					"nn": true,
@@ -1545,7 +1558,8 @@
 				"ff7c1750-2411-445f-95ea-f68e124cec9c",
 				"666bd1c3-ba65-4569-9a51-26aefc05105d",
 				"82fc0ce8-1113-4f10-968e-97ed827e6754",
-				"61bf440e-e68c-469c-be85-42b062c3bd4e"
+				"61bf440e-e68c-469c-be85-42b062c3bd4e",
+				"aaf0f345-4c3b-4f1d-ad3f-2a414e7f9a20"
 			],
 			"lines": [],
 			"keys": [
@@ -1600,6 +1614,19 @@
 					"options": ""
 				},
 				{
+					"id": "11025b7d-a21a-4486-86e9-fe632353a3bc",
+					"name": "folder",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "folders"
+				},
+				{
 					"id": "ee269bb3-2124-4a4b-90c9-1b807ae77cd5",
 					"name": "icon",
 					"datatype": "String",
@@ -1645,7 +1672,8 @@
 				"10ebf170-0f35-4e22-9b05-f03576efecac",
 				"d1f63b27-bd8f-480d-bb79-974c357f2b0a",
 				"24f87391-4a0d-4acc-bd0e-606dc3bb0847",
-				"c1f06e75-904f-43fa-833a-f8bbf184407f"
+				"c1f06e75-904f-43fa-833a-f8bbf184407f",
+				"f666faa3-6b23-47cf-9255-6c80d8a138a9"
 			],
 			"lines": [],
 			"keys": [
@@ -1698,6 +1726,19 @@
 					"list": false,
 					"ref": "",
 					"options": ""
+				},
+				{
+					"id": "4a9c7872-b47a-4300-879f-75ef4badd7c3",
+					"name": "folder",
+					"datatype": "ObjectId",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"fk": true,
+					"ref": "folders"
 				},
 				{
 					"id": "2b8645db-f4f3-4ecf-b020-bfe475c92d68",
@@ -1758,7 +1799,8 @@
 			"relations": [
 				"ecfccf47-2a16-4847-bbc5-5401ddac27bd",
 				"cf99384a-2c5d-42e0-aed7-32ff618833a8",
-				"dc27d0ea-fc9b-4845-ab3d-d0d40810d421"
+				"dc27d0ea-fc9b-4845-ab3d-d0d40810d421",
+				"59f8ca77-51a7-4570-9102-8bf8a2dcb219"
 			],
 			"lines": [],
 			"keys": [
@@ -3194,7 +3236,10 @@
 				"40c8ec3c-813b-42b2-9c0e-977a2545377d",
 				"32c33e4c-6d3d-41b0-89b2-8d68db8f149a",
 				"13b152dc-1241-4e61-9bce-2b327f70b3ce",
-				"dad3fbb0-5d28-4225-a614-f405dc73ceb9"
+				"dad3fbb0-5d28-4225-a614-f405dc73ceb9",
+				"aaf0f345-4c3b-4f1d-ad3f-2a414e7f9a20",
+				"f666faa3-6b23-47cf-9255-6c80d8a138a9",
+				"59f8ca77-51a7-4570-9102-8bf8a2dcb219"
 			],
 			"lines": [],
 			"keys": [
@@ -4096,6 +4141,81 @@
 			],
 			"generate": true,
 			"generateCustomCode": true
+		},
+		"aaf0f345-4c3b-4f1d-ad3f-2a414e7f9a20": {
+			"id": "aaf0f345-4c3b-4f1d-ad3f-2a414e7f9a20",
+			"visible": true,
+			"name": "folders_races",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "abf05ae5-0648-44ee-84a3-091ce5e43a6e",
+			"parent": "72b83c50-5265-4a53-832e-cbd64be80ccb",
+			"child": "0c5e80e6-9127-42e8-b482-01d50d255c1a",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "53dd18bc-ecca-4c44-9833-2a442e720194",
+					"parentcol": "fca11a41-1b7a-4844-95a3-f4f9648b1a37",
+					"childcol": "d6612336-4701-4fc6-b881-11aed327d592"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"f666faa3-6b23-47cf-9255-6c80d8a138a9": {
+			"id": "f666faa3-6b23-47cf-9255-6c80d8a138a9",
+			"visible": true,
+			"name": "folders_class",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "abf05ae5-0648-44ee-84a3-091ce5e43a6e",
+			"parent": "72b83c50-5265-4a53-832e-cbd64be80ccb",
+			"child": "9e61f327-990b-4274-bb2e-d89ef7445fa0",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "2afb5234-ac1c-4524-91ab-97227db02959",
+					"parentcol": "fca11a41-1b7a-4844-95a3-f4f9648b1a37",
+					"childcol": "11025b7d-a21a-4486-86e9-fe632353a3bc"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"59f8ca77-51a7-4570-9102-8bf8a2dcb219": {
+			"id": "59f8ca77-51a7-4570-9102-8bf8a2dcb219",
+			"visible": true,
+			"name": "folders_crystals",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "abf05ae5-0648-44ee-84a3-091ce5e43a6e",
+			"parent": "72b83c50-5265-4a53-832e-cbd64be80ccb",
+			"child": "d1664555-735d-4471-829f-7cd9618e62b5",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "ec5bc3f5-8671-4f2c-ae28-b6ddf06026ff",
+					"parentcol": "fca11a41-1b7a-4844-95a3-f4f9648b1a37",
+					"childcol": "4a9c7872-b47a-4300-879f-75ef4badd7c3"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
 		}
 	},
 	"notes": {},
@@ -4127,7 +4247,7 @@
 		"currentDisplayMode": "metadata",
 		"def_coltopk": true,
 		"def_others": "",
-		"lastSaved": "Wed Jul 26 2023 22:19:20 GMT-0400 (Eastern Daylight Time)"
+		"lastSaved": "Sat Jul 29 2023 20:35:53 GMT-0400 (Eastern Daylight Time)"
 	},
 	"otherObjects": {
 		"4e847f4e-bd2e-4af3-9020-c6358ddf0d38": {
@@ -4548,7 +4668,7 @@
 					"referencedItemId": "0c5e80e6-9127-42e8-b482-01d50d255c1a",
 					"x": 895,
 					"y": 1063,
-					"gHeight": 189,
+					"gHeight": 207,
 					"gWidth": 244,
 					"color": "#ffffff",
 					"background": "#03a9f4",
@@ -4559,7 +4679,7 @@
 					"referencedItemId": "9e61f327-990b-4274-bb2e-d89ef7445fa0",
 					"x": 890,
 					"y": 1285,
-					"gHeight": 117,
+					"gHeight": 135,
 					"gWidth": 228,
 					"color": "#ffffff",
 					"background": "#03a9f4",
@@ -4568,9 +4688,9 @@
 				},
 				"d1664555-735d-4471-829f-7cd9618e62b5": {
 					"referencedItemId": "d1664555-735d-4471-829f-7cd9618e62b5",
-					"x": 893,
+					"x": 895,
 					"y": 1428,
-					"gHeight": 135,
+					"gHeight": 153,
 					"gWidth": 229,
 					"color": "#ffffff",
 					"background": "#03a9f4",

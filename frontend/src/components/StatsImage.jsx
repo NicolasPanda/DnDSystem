@@ -1,7 +1,6 @@
 import React from "react";
 
 /**
- *
  * @typedef {'armor' | 'awareness' | 'damageMag' | 'damagePhy' | 'evasion' | 'focus' | 'health' | 'intelligence' | 'luck' | 'movement' | 'resistance' | 'speed' | 'strength' | 'talent' | 'vitality' | 'xp'} StatType
  */
 

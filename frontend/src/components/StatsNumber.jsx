@@ -3,8 +3,7 @@ import React from "react";
 import StatsImage from "./StatsImage";
 
 /**
- *
- * @typedef {'armor' | 'awareness' | 'damageMag' | 'damagePhy' | 'evasion' | 'intelligence' | 'luck' | 'movement' | 'resistance' | 'speed' | 'strength' | 'talent' | 'vitality'} StatType
+ * @typedef {'armor' | 'awareness' | 'damageMag' | 'damagePhy' | 'evasion' | 'focus' | 'health' | 'intelligence' | 'luck' | 'movement' | 'resistance' | 'speed' | 'strength' | 'talent' | 'vitality' | 'xp'} StatType
  */
 
 /**

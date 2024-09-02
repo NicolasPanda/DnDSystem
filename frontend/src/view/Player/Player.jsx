@@ -31,18 +31,18 @@ function Player() {
           {({ isActive }) => <StatsIcon fill={isActive ? "#000" : "#fff"} />}
         </NavLink>
         <NavLink
-          to={"Spell"}
-          className={({ isActive }) => getClassName(isActive)}
-        >
-          {({ isActive }) => <SpellIcon fill={isActive ? "#000" : "#fff"} />}
-        </NavLink>
-        <NavLink
           to={"equipment"}
           className={({ isActive }) => getClassName(isActive)}
         >
           {({ isActive }) => (
             <EquipmentIcon fill={isActive ? "#000" : "#fff"} />
           )}
+        </NavLink>
+        <NavLink
+          to={"Spell"}
+          className={({ isActive }) => getClassName(isActive)}
+        >
+          {({ isActive }) => <SpellIcon fill={isActive ? "#000" : "#fff"} />}
         </NavLink>
         <NavLink
           to={"inventory"}

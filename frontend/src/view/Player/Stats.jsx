@@ -1,5 +1,6 @@
 import React from "react";
 import StatsNumber from "../../components/StatsNumber";
+import ProgressBar from "../../components/ProgressBar";
 
 function Stats() {
   return (
@@ -14,7 +15,13 @@ function Stats() {
           <StatsNumber type="speed" value="78" />
           <StatsNumber type="luck" value="64" modified />
         </div>
-        <div className="flex flex-col w-full">stats bar</div>
+        <div className="flex flex-col w-full gap-2">
+          <ProgressBar color="green" value={20} max={34} statsIcon="health" />
+          <ProgressBar color="blue" value={4} max={5} statsIcon="focus" />
+          <ProgressBar color="yellow" value={10} max={100} statsIcon="xp" />
+          <h2 className="text-xl font-bold text-neutral-500">Buffs</h2>
+          {/* buffs list go here */}
+        </div>
       </div>
       <div className="flex justify-between mt-6">
         <div className="flex flex-col gap-1.5">

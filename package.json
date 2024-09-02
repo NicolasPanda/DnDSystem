@@ -1,0 +1,15 @@
+{
+  "name": "ftk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-all": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run frontend\" "
+  },
+  "author": "Nicolas Gagne",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
